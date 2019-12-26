@@ -7,6 +7,6 @@ npm install --save express
 
 node server.js
 
-Postman API > POST localhost:3000
+Postman API > POST localhost:3000/products
 
 ```
