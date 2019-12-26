@@ -22,7 +22,7 @@ router.get('/:productId', (req, res, next) => {
         });
     } else {
         res.status(200).json({
-            message: 'You passed and ID'
+            message: 'You passed an ID'
         });
     }
 });
