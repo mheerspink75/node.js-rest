@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.header('Access-Contorl-Allow-Origin', '*');
     res.header(
-        'Access-Contorl-A;;pw-Headers', 
+        'Access-Contorl-Allow-Headers', 
         'Origin, X-Requested-With', 'Content-Type, Accept, Authoriztion'
     );
     if (req.method === 'OPTIONS') {
