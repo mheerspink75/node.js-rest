@@ -17,3 +17,8 @@ npm install --save morgan
 
 npm start
 ```
+
+```
+npm install --save body-parser
+
+```
