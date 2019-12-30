@@ -20,5 +20,10 @@ npm start
 
 ```
 npm install --save body-parser
+```
 
+```
+MongoDB Atlas
+
+npm install --save mongoose
 ```
