@@ -2,18 +2,29 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+mongoose.connect(
+    'mongodb+srv://node-shop:' + 
+    process.env.MONGO_ATLAS_PW + 
+    '@node-rest-shop-likze.mongodb.net/test?retryWrites=true&w=majority',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+);
 
 app.use((req, res, next) => {
     res.header('Access-Contorl-Allow-Origin', '*');
     res.header(
-        'Access-Contorl-Allow-Headers', 
+        'Access-Contorl-Allow-Headers',
         'Origin, X-Requested-With', 'Content-Type, Accept, Authoriztion'
     );
     if (req.method === 'OPTIONS') {
