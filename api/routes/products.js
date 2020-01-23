@@ -64,11 +64,6 @@ router.post('/', (req, res, next) => {
                 error: err
             });
         });
-
-    res.status(201).json({
-        message: 'Handling POST requests to /products',
-        createdProduct: product
-    });
 });
 
 
